@@ -13,27 +13,40 @@ const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
 
-
 app.use(cors());
 app.use(express.json());
 
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+// Serve uploaded files
+app.use(
+    "/uploads",
+    express.static(path.join(__dirname, "../uploads"))
+);
 
-const PORT = 3000;
+// Serve frontend files
+const frontendPath = path.join(__dirname, "../frontend");
+
+app.use("/frontend", express.static(frontendPath));
+app.use(express.static(frontendPath));
+
+const PORT = process.env.PORT || 3000;
 
 connectDB();
 
+// API routes
 app.use("/api/notices", noticeRoutes);
 app.use("/api/admin", adminRoutes);
 
+// Open website from root
 app.get("/", (req, res) => {
-    res.send("College Info Hub Backend is Running!");
+    res.sendFile(path.join(frontendPath, "index.html"));
 });
 
+// About route
 app.get("/about", (req, res) => {
     res.send("Welcome to College Info Hub");
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+// Start server
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server is running on port ${PORT}`);
 });
