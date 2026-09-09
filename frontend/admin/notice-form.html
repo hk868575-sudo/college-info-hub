@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Notice - College Info Hub</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>College Info Hub</h1>
+        <p>Notice Management</p>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <h2 id="formTitle">
+                Add New Notice
+            </h2>
+
+            <form id="noticeForm">
+
+                <label for="title">
+                    Notice Title
+                </label>
+
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Enter notice title"
+                    required
+                >
+
+
+                <label for="category">
+                    Category
+                </label>
+
+                <select id="category" required>
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                    <option value="Examination">
+                        Examination
+                    </option>
+
+                    <option value="Holiday">
+                        Holiday
+                    </option>
+
+                    <option value="Event">
+                        Event
+                    </option>
+
+                    <option value="General">
+                        General
+                    </option>
+
+                </select>
+
+
+                <label for="description">
+                    Description
+                </label>
+
+                <textarea
+                    id="description"
+                    rows="6"
+                    placeholder="Enter notice description"
+                    required
+                ></textarea>
+
+
+                <label for="publishDate">
+                    Publish Date
+                </label>
+
+                <input
+                    type="date"
+                    id="publishDate"
+                    required
+                >
+
+
+                <label for="eventDate">
+                    Event Date
+                </label>
+
+                <input
+                    type="date"
+                    id="eventDate"
+                >
+
+
+                <label for="expiryDate">
+                    Expiry Date
+                </label>
+
+                <input
+                    type="date"
+                    id="expiryDate"
+                >
+
+
+                <label for="attachment">
+                    Attachment
+                </label>
+
+                <input
+                    type="file"
+                    id="attachment"
+                    accept=".pdf,.jpg,.jpeg,.png"
+                >
+
+
+                <label>
+                    <input
+                        type="checkbox"
+                        id="isImportant"
+                    >
+                    Mark as Important Notice
+                </label>
+
+
+                <button type="submit">
+                    Save Notice
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelButton"
+                >
+                    Cancel
+                </button>
+
+            </form>
+
+            <p id="formMessage"></p>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/notice-form.js"></script>
+
+</body>
+
+</html>

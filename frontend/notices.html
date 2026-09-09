@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Notices - College Info Hub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>College Info Hub</h1>
+        <p>All College Notices</p>
+    </header>
+
+    <nav class="navbar">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="notices.html">
+            All Notices
+        </a>
+
+        <a href="admin/login.html">
+            Admin Login
+        </a>
+
+    </nav>
+
+    <main>
+
+        <section class="hero">
+
+            <h2>
+                All Notices
+            </h2>
+
+            <p>
+                Search and filter college notices.
+            </p>
+
+        </section>
+
+
+        <!-- Search and Filter -->
+
+        <section class="filters">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search notices..."
+            >
+
+            <select id="categoryFilter">
+
+                <option value="">
+                    All Categories
+                </option>
+
+                <option value="Examination">
+                    Examination
+                </option>
+
+                <option value="Holiday">
+                    Holiday
+                </option>
+
+                <option value="Event">
+                    Event
+                </option>
+
+                <option value="General">
+                    General
+                </option>
+
+            </select>
+
+            <button id="searchButton">
+                Search
+            </button>
+
+        </section>
+
+
+        <!-- Notices -->
+
+        <section>
+
+            <h2>
+                Notices
+            </h2>
+
+            <div id="noticesContainer">
+
+                <!-- Notices will appear here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/notices.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Info Hub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>College Info Hub</h1>
+        <p>College Notice Board</p>
+    </header>
+
+    <nav class="navbar">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="notices.html">
+            All Notices
+        </a>
+
+        <a href="admin/login.html">
+            Admin Login
+        </a>
+
+    </nav>
+
+    <main>
+
+        <!-- Welcome Section -->
+
+        <section class="hero">
+
+            <h2>
+                Welcome to College Info Hub
+            </h2>
+
+            <p>
+                Stay updated with the latest college notices.
+            </p>
+
+        </section>
+
+
+        <!-- New Notice Ticker -->
+
+        <section
+            id="newNoticeSection"
+            class="new-notice-section"
+        >
+
+            <div class="new-notice-label">
+
+                🔔 NEW NOTICE
+
+            </div>
+
+            <div class="notice-ticker">
+
+                <div id="noticeTicker">
+
+                    <!-- New notices will appear here -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Latest Notices -->
+
+        <section>
+
+            <h2>
+                Latest Notices
+            </h2>
+
+            <a
+                href="notices.html"
+                class="view-all-button"
+            >
+                View All Notices
+            </a>
+
+            <div id="noticeContainer">
+
+                <!-- Notices will be loaded here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/home.js"></script>
+
+</body>
+
+</html>

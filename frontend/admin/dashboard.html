@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - College Info Hub</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>College Info Hub</h1>
+        <p>Admin Dashboard</p>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <h2 id="welcomeMessage">
+                Welcome, Admin
+            </h2>
+
+            <p>
+                Manage college notices from this dashboard.
+            </p>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                Notice Management
+            </h2>
+
+            <p id="noticeCount">
+                Total Notices: 0
+            </p>
+
+            <div class="dashboard-actions">
+
+                <button id="addNoticeButton">
+                    Add Notice
+                </button>
+
+                <button id="logoutButton">
+                    Logout
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2>
+                All Notices
+            </h2>
+
+            <div id="adminNoticesContainer">
+                <!-- Notices will appear here -->
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>
