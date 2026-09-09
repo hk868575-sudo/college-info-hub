@@ -40,7 +40,7 @@ async function loadNotice() {
     try {
 
         const response = await fetch(
-            `http://localhost:3000/api/notices/${noticeId}`
+            `/api/notices/${noticeId}`
         );
 
         if (!response.ok) {
@@ -143,7 +143,7 @@ noticeForm.addEventListener("submit", async function (event) {
     try {
 
         let url =
-            "http://localhost:3000/api/notices";
+            "/api/notices";
 
         let method = "POST";
 
@@ -152,7 +152,7 @@ noticeForm.addEventListener("submit", async function (event) {
         if (noticeId) {
 
             url =
-                `http://localhost:3000/api/notices/${noticeId}`;
+                `/api/notices/${noticeId}`;
 
             method = "PUT";
         }

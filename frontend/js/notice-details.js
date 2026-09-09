@@ -37,7 +37,7 @@ async function loadNoticeDetails() {
         // API URL
 
         const url =
-            `http://localhost:3000/api/notices/${id}`;
+            `/api/notices/${id}`;
 
         console.log("Fetching:", url);
 
@@ -156,7 +156,7 @@ async function loadNoticeDetails() {
                                 📎 Attachment:
 
                                 <a
-                                    href="http://localhost:3000${notice.attachment.url}"
+                                    href="${notice.attachment.url}"
                                     target="_blank"
                                 >
                                     ${notice.attachment.name}

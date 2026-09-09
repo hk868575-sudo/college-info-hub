@@ -14,7 +14,7 @@ async function loadNotices() {
     try {
 
         const response = await fetch(
-            "http://localhost:3000/api/notices"
+            "/api/notices"
         );
 
         if (!response.ok) {

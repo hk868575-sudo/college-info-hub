@@ -12,7 +12,7 @@ async function loadNotices() {
         const search = searchInput.value.trim();
         const category = categoryFilter.value;
 
-        let url = "http://localhost:3000/api/notices";
+        let url = "/api/notices";
 
         const params = new URLSearchParams();
 

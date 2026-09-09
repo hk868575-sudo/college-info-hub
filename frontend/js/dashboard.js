@@ -53,7 +53,7 @@ async function loadNotices() {
     try {
 
         const response = await fetch(
-            "http://localhost:3000/api/notices?includeExpired=true&includeArchived=true"
+            "/api/notices?includeExpired=true&includeArchived=true"
         );
 
         const notices = await response.json();
@@ -184,7 +184,7 @@ function displayNotices(notices) {
                             📎 Attachment:
 
                             <a
-                                href="http://localhost:3000${notice.attachment.url}"
+                                href="${notice.attachment.url}"
                                 target="_blank"
                             >
                                 ${notice.attachment.name}
@@ -314,7 +314,7 @@ async function archiveNotice(id) {
 
         const response = await fetch(
 
-            `http://localhost:3000/api/notices/${id}/archive`,
+            `/api/notices/${id}/archive`,
 
             {
                 method: "PUT",
@@ -383,7 +383,7 @@ async function restoreNotice(id) {
 
         const response = await fetch(
 
-            `http://localhost:3000/api/notices/${id}/restore`,
+            `/api/notices/${id}/restore`,
 
             {
                 method: "PUT",
@@ -452,7 +452,7 @@ async function deleteNotice(id) {
 
         const response = await fetch(
 
-            `http://localhost:3000/api/notices/${id}`,
+            `/api/notices/${id}`,
 
             {
                 method: "DELETE",
