@@ -219,10 +219,10 @@ function formatDate(date) {
 
 // Go back to notices page
 
+// Go back to notices page
+
 function goBack() {
-
-    window.history.back();
-
+    window.location.href = "notices.html";
 }
 
 

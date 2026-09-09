@@ -65,13 +65,14 @@ async function loadNotices() {
 
     } catch (error) {
 
-        console.error("Error loading notices:", error);
+        console.error(
+            "Error loading notices:",
+            error
+        );
 
         adminNoticesContainer.innerHTML =
             "<p>Unable to load notices.</p>";
-
     }
-
 }
 
 
@@ -89,13 +90,13 @@ function displayNotices(notices) {
         return;
     }
 
-
     notices.forEach(notice => {
 
         const noticeCard =
             document.createElement("div");
 
-        noticeCard.className = "notice-card";
+        noticeCard.className =
+            "notice-card";
 
 
         // Check whether notice is expired
@@ -150,12 +151,15 @@ function displayNotices(notices) {
             ${
                 notice.eventDate
                     ? `
+
                         <p class="notice-date">
 
                             Event Date:
+
                             ${formatDate(notice.eventDate)}
 
                         </p>
+
                     `
                     : ""
             }
@@ -164,12 +168,15 @@ function displayNotices(notices) {
             ${
                 notice.expiryDate
                     ? `
+
                         <p class="notice-date">
 
                             Expiry Date:
+
                             ${formatDate(notice.expiryDate)}
 
                         </p>
+
                     `
                     : ""
             }
@@ -179,6 +186,7 @@ function displayNotices(notices) {
                 notice.attachment &&
                 notice.attachment.url
                     ? `
+
                         <p class="notice-attachment">
 
                             📎 Attachment:
@@ -187,10 +195,13 @@ function displayNotices(notices) {
                                 href="${notice.attachment.url}"
                                 target="_blank"
                             >
+
                                 ${notice.attachment.name}
+
                             </a>
 
                         </p>
+
                     `
                     : ""
             }
@@ -199,34 +210,44 @@ function displayNotices(notices) {
             <button
                 onclick="viewNotice('${notice._id}')"
             >
+
                 View
+
             </button>
 
 
             <button
                 onclick="editNotice('${notice._id}')"
             >
+
                 Edit
+
             </button>
 
 
             ${
                 notice.isArchived
-
                     ? `
+
                         <button
                             onclick="restoreNotice('${notice._id}')"
                         >
-                            Restore
-                        </button>
-                    `
 
+                            Restore
+
+                        </button>
+
+                    `
                     : `
+
                         <button
                             onclick="archiveNotice('${notice._id}')"
                         >
+
                             Archive
+
                         </button>
+
                     `
             }
 
@@ -234,13 +255,17 @@ function displayNotices(notices) {
             <button
                 onclick="deleteNotice('${notice._id}')"
             >
+
                 Delete
+
             </button>
 
         `;
 
 
-        adminNoticesContainer.appendChild(noticeCard);
+        adminNoticesContainer.appendChild(
+            noticeCard
+        );
 
     });
 
@@ -313,9 +338,7 @@ async function archiveNotice(id) {
     try {
 
         const response = await fetch(
-
             `/api/notices/${id}/archive`,
-
             {
                 method: "PUT",
 
@@ -324,7 +347,6 @@ async function archiveNotice(id) {
                         `Bearer ${token}`
                 }
             }
-
         );
 
 
@@ -337,7 +359,6 @@ async function archiveNotice(id) {
             alert(data.message);
 
             return;
-
         }
 
 
@@ -382,9 +403,7 @@ async function restoreNotice(id) {
     try {
 
         const response = await fetch(
-
             `/api/notices/${id}/restore`,
-
             {
                 method: "PUT",
 
@@ -393,7 +412,6 @@ async function restoreNotice(id) {
                         `Bearer ${token}`
                 }
             }
-
         );
 
 
@@ -406,7 +424,6 @@ async function restoreNotice(id) {
             alert(data.message);
 
             return;
-
         }
 
 
@@ -451,9 +468,7 @@ async function deleteNotice(id) {
     try {
 
         const response = await fetch(
-
             `/api/notices/${id}`,
-
             {
                 method: "DELETE",
 
@@ -462,7 +477,6 @@ async function deleteNotice(id) {
                         `Bearer ${token}`
                 }
             }
-
         );
 
 
@@ -475,7 +489,6 @@ async function deleteNotice(id) {
             alert(data.message);
 
             return;
-
         }
 
 
@@ -517,8 +530,11 @@ logoutButton.addEventListener(
             "adminUsername"
         );
 
+
+        // Go to Home page after logout
+
         window.location.href =
-            "login.html";
+            "../index.html";
 
     }
 );

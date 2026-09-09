@@ -310,3 +310,25 @@ main section > h2 {
 .notice-attachment a:hover {
     text-decoration: underline;
 }
+.home-button {
+    display: block;
+    margin-top: 12px;
+    text-align: center;
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.home-button:hover {
+    text-decoration: underline;
+}
+
+.form-navigation {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.form-navigation .home-button {
+    display: inline-block;
+    margin: 0 8px;
+}
